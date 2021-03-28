@@ -123,6 +123,7 @@ public class LoginPage {
     }
 
     public void userCreation(){
+        // Setting up the GUI for user creation
         JFrame frame3 = new JFrame();
         JLabel UsrName =  new JLabel("Username:");
         JLabel PassWrd = new JLabel("Password:");
