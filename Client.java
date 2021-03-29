@@ -10,7 +10,7 @@ public class Client {
         LoginPage log = new LoginPage(writer, reader);
         log.logIn();
     }
-
+    // Method for setting upp connection to server and initializing in and output streams
     public static void networkSetup(){
         try {
             Socket sock = new Socket("127.0.0.1", 5000);
