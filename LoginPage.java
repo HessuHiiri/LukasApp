@@ -1,3 +1,9 @@
+/* @Author Luka Alhonen, luka.alhonen@protonmail.com
+ *
+ * This class contains all the client side stuff for the login and user creation pages
+ *
+ */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -82,32 +88,28 @@ public class LoginPage {
         passInput.setBounds(155, 140, 175, 25);
         usrInput.setBounds(155, 110, 175, 25);
         login.setBounds(155, 170, 75, 25);
-        login.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                String password = String.valueOf(passInput.getPassword());
-                String username = usrInput.getText();
-                String usrShaHex = encrypt(username);
-                String passShaHex = encrypt(password);
-                String logInDetails = usrShaHex + "\n" + passShaHex;
-                writer.println(logInDetails);
-                writer.flush();
-                while(barry == null){
-                }
-                if(barry){
-                    frame2.dispose();
-                    //getIP();
-                }
+        login.addActionListener(actionEvent -> {
+            String password = String.valueOf(passInput.getPassword());
+            String username = usrInput.getText();
+            String usrShaHex = encrypt(username);
+            String passShaHex = encrypt(password);
+            String logInDetails = usrShaHex + "\n" + passShaHex;
+            writer.println(logInDetails);
+            writer.flush();
+            while(barry == null){
+            }
+            if(barry){
+                frame2.dispose();
+                //getIP();
+            } else{
+                barry = null;
             }
         });
 
         newUser.setBounds(240, 170, 90, 25);
-        newUser.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                frame2.dispose();
-                userCreation();
-            }
+        newUser.addActionListener(actionEvent -> {
+            frame2.dispose();
+            userCreation();
         });
 
         frame2.add(newUser);
@@ -135,7 +137,7 @@ public class LoginPage {
         PassWrd.setBounds(50, 140, 100, 25);
         passInput.setBounds(155, 140, 175, 25);
         usrInput.setBounds(155, 110, 175, 25);
-        login.setBounds(155, 170, 90, 25);
+        login.setBounds(155, 170, 120, 25);
         login.addActionListener(actionEvent -> {
             String password = String.valueOf(passInput.getPassword());
             String username = usrInput.getText();

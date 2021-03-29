@@ -12,7 +12,7 @@ import java.net.Socket;
 public class Server {
     public static void main(String[] args){
         try {
-            ServerSocket servSock = new ServerSocket(5000);
+            ServerSocket servSock = new ServerSocket(20000);
             while(true) {
                 // Everytime a new connection is made a new thread and a new instance of ClientHandler is started
                 Socket clientSock = servSock.accept();

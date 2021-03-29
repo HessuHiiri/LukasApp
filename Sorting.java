@@ -1,3 +1,10 @@
+/* @Author Luka Alhonen, luka.alhonen@protonmail.com
+*
+* Class for all the sorting algorithms used in the modules class.
+* All written by me, just for fun.
+*
+*/
+
 public class Sorting {
     private int[] elements = new int[10];
 
