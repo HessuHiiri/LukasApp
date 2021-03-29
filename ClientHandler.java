@@ -15,7 +15,7 @@ public class ClientHandler implements Runnable{
     String password;
     PrintWriter writer;
     // Modify this so it works on your system
-    private static final File usrData = new File("/home/luka/IdeaProjects/LukasApp/usrData.txt");
+    private static final File usrData = new File("./usrData.txt");
     public ClientHandler(Socket clientSocket){
         try {
             sock = clientSocket;
