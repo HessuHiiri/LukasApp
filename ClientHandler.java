@@ -74,9 +74,9 @@ public class ClientHandler implements Runnable{
 
     public void writeToClient(Boolean barry){
         if(barry){
-            writer.println(0);
+            writer.println("0");
         } else{
-            writer.println(1);
+            writer.println("1");
         }
         writer.flush();
     }

@@ -4,6 +4,23 @@ import java.awt.event.ActionListener;
 import java.net.UnknownHostException;
 
 public class Modules {
+    public void menu(){
+        JFrame frame = new JFrame("Menu");
+        // Navigation buttons
+        JButton games = new JButton("Games");
+        JButton sorting = new JButton("Sorting");
+        JButton chat = new JButton("Chat");
+        JButton ipGrabber = new JButton("IP grabber");
+
+        games.setBounds(10,10,100,50);
+
+        frame.add(games);
+        frame.setLayout(null);
+        frame.setSize(600,400);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
     public static void getIP(){
         JFrame frame;
         JLabel label;
