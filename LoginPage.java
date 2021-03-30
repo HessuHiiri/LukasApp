@@ -169,7 +169,7 @@ public class LoginPage {
                     }
                 }
             } else if(verifier == 1){
-                System.out.println("Username or password cannot contain space or tap characters!");
+                System.out.println("Username or password cannot contain space or tab characters!");
             } else if(verifier == 2){
                 System.out.println("Username or password cannot be empty!");
             } else if(verifier == 3){
