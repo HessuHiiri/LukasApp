@@ -35,13 +35,16 @@ public class LoginPage {
                     if(line.equals("0")){
                         //System.out.println("Small piss");
                         barry = true;
-                    } else if(line.equals("1")){
+                    } else if(line.equals("1")) {
                         barry = false;
+<<<<<<< HEAD
                     } else if(line.equals("00")){
                         //System.out.println("fuck piss");
                         userCreation = line;
                     } else if(line.equals("01")){
                         userCreation = line;
+=======
+>>>>>>> dev
                     }
                 }
             } catch (IOException e){
@@ -99,7 +102,10 @@ public class LoginPage {
             writer.println(logInDetails);
             writer.flush();
             while(barry == null){
+<<<<<<< HEAD
                 //System.out.println(barry);
+=======
+>>>>>>> dev
             }
             if(barry){
                 frame2.dispose();
@@ -132,7 +138,11 @@ public class LoginPage {
         JFrame frame3 = new JFrame();
         JLabel UsrName =  new JLabel("Username:");
         JLabel PassWrd = new JLabel("Password:");
+<<<<<<< HEAD
         JLabel Passwrd2 = new JLabel("Password:");
+=======
+        JLabel PassWrd2 = new JLabel("Password:");
+>>>>>>> dev
         JPasswordField passInput = new JPasswordField();
         JPasswordField passInput2 = new JPasswordField();
         JTextField usrInput = new JTextField();
@@ -140,12 +150,17 @@ public class LoginPage {
 
         UsrName.setBounds(50,110,100,25);
         PassWrd.setBounds(50, 140, 100, 25);
+<<<<<<< HEAD
         Passwrd2.setBounds(50, 170, 100, 25);
+=======
+        PassWrd2.setBounds(50, 170, 100, 25);
+>>>>>>> dev
         passInput.setBounds(155, 140, 175, 25);
         passInput2.setBounds(155, 170, 175, 25);
         usrInput.setBounds(155, 110, 175, 25);
         login.setBounds(155, 200, 120, 25);
         login.addActionListener(actionEvent -> {
+<<<<<<< HEAD
             String password = String.valueOf(passInput.getPassword());
             String password2 = String.valueOf(passInput2.getPassword());
             String username = usrInput.getText();
@@ -170,6 +185,31 @@ public class LoginPage {
                 }
             } else if(verifier == 1){
                 System.out.println("Username or password cannot contain space or tab characters!");
+=======
+            String password1 = String.valueOf(passInput.getPassword());
+            String password2 = String.valueOf(passInput2.getPassword());
+            String username = usrInput.getText();
+            int verifier = verifyInput(username, password1, password2);
+            if(verifier == 0) {
+                String usrShaHex = encrypt(username);
+                String passShaHex = encrypt(password1);
+                String logInDetails = "new\n" + usrShaHex + "\n" + passShaHex;
+                writer.println(logInDetails);
+                writer.flush();
+
+                while (barry == null) {
+                }
+                if (barry) {
+                    System.out.println("User successfully created");
+                    frame3.dispose();
+                    logIn();
+                } else {
+                    System.out.println("User already exists");
+                    barry = null;
+                }
+            } else if(verifier == 1){
+                System.out.println("Username or password cannot contain space or tap characters!");
+>>>>>>> dev
             } else if(verifier == 2){
                 System.out.println("Username or password cannot be empty!");
             } else if(verifier == 3){
@@ -180,7 +220,11 @@ public class LoginPage {
         frame3.add(login);
         frame3.add(UsrName);
         frame3.add(PassWrd);
+<<<<<<< HEAD
         frame3.add(Passwrd2);
+=======
+        frame3.add(PassWrd2);
+>>>>>>> dev
         frame3.add(passInput);
         frame3.add(passInput2);
         frame3.add(usrInput);

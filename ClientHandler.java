@@ -9,11 +9,11 @@ import java.io.*;
 import java.net.Socket;
 
 public class ClientHandler implements Runnable{
-    Socket sock;
-    BufferedReader reader;
-    String username;
-    String password;
-    PrintWriter writer;
+    private Socket sock;
+    private BufferedReader reader;
+    private String username;
+    private String password;
+    private PrintWriter writer;
     // Modify this so it works on your system
     private static final File usrData = new File("./usrData.txt");
     public ClientHandler(Socket clientSocket){
@@ -26,6 +26,7 @@ public class ClientHandler implements Runnable{
         }
     }
 
+    // Method for reading and writing to the client
     public void run(){
         String line;
         try {
@@ -35,32 +36,49 @@ public class ClientHandler implements Runnable{
                     // New user creation
                     username = reader.readLine();
                     password = reader.readLine();
+                    writeToClient(addUser(username, password));
+                    /*
                     if(addUser(username, password)){
                         // If new user was successfully created, send verification to client
-                        writer.println("00");
+                        writer.println(0);
                     } else{
                         // If new user couldn't be created, notify client
-                        writer.println("01");
+                        writer.println(1);
                     }
                     writer.flush();
+
+                     */
                 } else{
                     // Login
                     username = line;
                     password = reader.readLine();
+                    writeToClient(verifyUser(username, password));
+                    /*
                     if(verifyUser(username, password)){
                         // If correct login info
-                        writer.println("0");
+                        writer.println(0);
                         writer.flush();
                     } else{
                         // If incorrect login info
-                        writer.println("1");
+                        writer.println(1);
                         writer.flush();
                     }
+
+                     */
                 }
             }
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public void writeToClient(Boolean barry){
+        if(barry){
+            writer.println("0");
+        } else{
+            writer.println("1");
+        }
+        writer.flush();
     }
 
     // Method for adding new unique user

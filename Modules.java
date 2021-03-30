@@ -12,7 +12,10 @@ import java.awt.event.ActionListener;
 import java.net.UnknownHostException;
 
 public class Modules {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
     public void menu(){
         JFrame frame = new JFrame("Menu");
         // Navigation buttons
