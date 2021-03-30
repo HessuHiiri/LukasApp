@@ -33,6 +33,7 @@ public class Modules {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
+    // Shitty little method for getting the ip of a website, will probably remove it
     public static void getIP(){
         JFrame frame;
         JLabel label;
