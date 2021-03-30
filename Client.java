@@ -20,7 +20,8 @@ public class Client {
     // Method for setting upp connection to server and initializing in and output streams
     public static void networkSetup(){
         try {
-            Socket sock = new Socket("192.168.1.119", 20000);
+            // pi 192.168.1.119
+            Socket sock = new Socket("127.0.0.1", 20000);
             writer = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
             reader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             System.out.println("Connected");
