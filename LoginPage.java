@@ -1,6 +1,10 @@
+/* @Author Luka Alhonen, luka.alhonen@protonmail.com
+ *
+ * This class contains all the client side stuff for the login and user creation pages
+ *
+ */
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
