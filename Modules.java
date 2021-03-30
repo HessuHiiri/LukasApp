@@ -1,21 +1,9 @@
-/* @Author Luka Alhonen, luka.alhonen@protonmail.com
-*
-* This class contains all the different modules you can access after logging in.
-* Different sorting algorithms, games written in python coming soon TM(will have to be downloaded from the server first)
-* and whatever else I come up with.
-*
-*/
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.UnknownHostException;
 
 public class Modules {
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
     public void menu(){
         JFrame frame = new JFrame("Menu");
         // Navigation buttons
